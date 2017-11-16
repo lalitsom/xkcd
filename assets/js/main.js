@@ -1,4 +1,4 @@
-var hostURL = "http://dynamic.xkcd.com/api-0/jsonp/comic/";
+var hostURL = "https://dynamic.xkcd.com/api-0/jsonp/comic/";
 var timeline = document.getElementById('timeline_id');
 var currentComic = 0
 function init(){
