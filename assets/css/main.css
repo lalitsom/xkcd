@@ -12,3 +12,7 @@
 .load-center{
   margin-left: 50%;
 }
+
+body{
+  font-size: 5vh !important;
+}
