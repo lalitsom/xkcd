@@ -4,7 +4,7 @@ var currentComic = 0
 var activeCalls = 0;
 function init(){
   startScrollListener();
-  fetchNextComic(currentComic);
+  fetchNextComic();
 }
 init();
 
@@ -19,7 +19,7 @@ function startScrollListener(){
   {
       //load new content
       activeCalls += 1
-      fetchNextComic(currentComic);
+      fetchNextComic();
   }
   })
 }
@@ -27,8 +27,7 @@ function startScrollListener(){
 function fetchNextComic(comicNumber = -1){
   if (comicNumber == -1){
     comicNumber = currentComic + 1
-  }
-  comicNumber +=1;
+  }  
   currentComic = comicNumber
   sendAJAXReq(hostURL + comicNumber);
 }
