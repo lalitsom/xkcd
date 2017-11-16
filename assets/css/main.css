@@ -6,13 +6,11 @@
   margin-left: 10px;
 }
 .comic_image{
-  display: inline;
-  min-height: 40vh;
+  display: inline;  
 }
 .load-center{
   margin-left: 50%;
 }
-
 body{
-  font-size: 5vh !important;
+  font-size: 25px;
 }

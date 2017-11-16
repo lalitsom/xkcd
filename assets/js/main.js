@@ -1,6 +1,7 @@
 var hostURL = "https://dynamic.xkcd.com/api-0/jsonp/comic/";
 var timeline = document.getElementById('timeline_id');
 var currentComic = 0
+var activeCalls = 0;
 function init(){
   startScrollListener();
   fetchNextComic(currentComic);
@@ -14,19 +15,25 @@ function startScrollListener(){
   var contentHeight = timeline.offsetHeight;
   var yOffset = window.pageYOffset;
   var y = yOffset + window.innerHeight;
-  if(y >= contentHeight)
+  if(y >= contentHeight && activeCalls < 3)
   {
       //load new content
+      activeCalls += 1
       fetchNextComic(currentComic);
   }
   })
 }
 
-function fetchNextComic(comicNumber = 1){
+function fetchNextComic(comicNumber = -1){
+  if (comicNumber == -1){
+    comicNumber = currentComic + 1
+  }
   comicNumber +=1;
   currentComic = comicNumber
-  json_url = hostURL + comicNumber;
+  sendAJAXReq(hostURL + comicNumber);
+}
 
+function sendAJAXReq(json_url){
   $.ajax({
     url: json_url,
     type: "GET",
@@ -39,9 +46,12 @@ function fetchNextComic(comicNumber = 1){
     },
     success: function(data) {
         extractDataFromJson(data)
+        activeCalls -= 1;
+    },
+    error: function(error){
+      setTimeout(sendAJAXReq,3000,json_url)
     }
 });
-
 }
 
 function extractDataFromJson(data){
