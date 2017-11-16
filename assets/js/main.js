@@ -1,10 +1,9 @@
-var hostURL = "https://xkcd.com/";
-var json_infoURL = "/info.0.json";
+var hostURL = "http://dynamic.xkcd.com/api-0/jsonp/comic/";
 var timeline = document.getElementById('timeline_id');
-
+var currentComic = 0
 function init(){
   startScrollListener();
-  fetchNextComic();
+  fetchNextComic(currentComic);
 }
 init();
 
@@ -18,16 +17,50 @@ function startScrollListener(){
   if(y >= contentHeight)
   {
       //load new content
-      fetchNextComic();
+      fetchNextComic(currentComic);
   }
   })
 }
 
 function fetchNextComic(comicNumber = 1){
   comicNumber +=1;
-  json_url = hostURL + comicNumber + json_infoURL;
+  currentComic = comicNumber
+  json_url = hostURL + comicNumber;
 
-  $.getJSON( json_url, function( data ) {
-      console.log(data);
-  })
+  $.ajax({
+    url: json_url,
+    type: "GET",
+    dataType: 'jsonp', // Notice! JSONP <-- P (lowercase)
+    processData: true,
+    data: {},
+    headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "origin, content-type, accept"
+    },
+    success: function(data) {
+        extractDataFromJson(data)
+    }
+});
+
+}
+
+function extractDataFromJson(data){
+  newComic ={}
+  newComic.img = data.img
+  newComic.title = data.title
+  newComic.num = data.num
+  addToTimeliene(newComic)
+}
+
+function addToTimeliene(comic){
+  createNode(comic).appendTo(".timeline");
+  $('.materialboxed').materialbox();
+}
+
+function createNode(comic){
+  newComicNode = $(document.getElementById('first_comic').cloneNode(true))
+  newComicNode.find(".comicURL")[0].href = "https://xkcd.com/" + comic.num
+  newComicNode.find(".comicURL")[0].innerHTML = "#" + comic.num + ". " + comic.title;
+  newComicNode.find(".comic_image")[0].src = comic.img
+  return newComicNode;
 }

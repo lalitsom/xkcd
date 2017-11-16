@@ -5,6 +5,10 @@
 .brand-logo{
   margin-left: 10px;
 }
-.image-card{
+.comic_image{
   display: inline;
+  min-height: 40vh;
+}
+.load-center{
+  margin-left: 50%;
 }
