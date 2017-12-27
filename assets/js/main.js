@@ -27,7 +27,7 @@ function startScrollListener(){
 function fetchNextComic(comicNumber = -1){
   if (comicNumber == -1){
     comicNumber = currentComic + 1
-  }  
+  }
   currentComic = comicNumber
   sendAJAXReq(hostURL + comicNumber);
 }
@@ -63,7 +63,6 @@ function extractDataFromJson(data){
 
 function addToTimeliene(comic){
   createNode(comic).appendTo(".timeline");
-  $('.materialboxed').materialbox();
 }
 
 function createNode(comic){
@@ -72,4 +71,14 @@ function createNode(comic){
   newComicNode.find(".comicURL")[0].innerHTML = "#" + comic.num + ". " + comic.title;
   newComicNode.find(".comic_image")[0].src = comic.img
   return newComicNode;
+}
+
+function setcomic(){  
+  comicSetElem = document.getElementById('comicSet');
+  _comicnumber = parseInt(comicSetElem.innerHTML);
+  if ( isNaN(_comicnumber) || _comicnumber<1 || _comicnumber>9999){
+    comicSetElem.innerHTML = currentComic;
+  }else{
+    currentComic = _comicnumber;
+  }
 }

@@ -6,11 +6,22 @@
   margin-left: 10px;
 }
 .comic_image{
-  display: inline;  
+  display: inline;
 }
 .load-center{
   margin-left: 50%;
 }
 body{
   font-size: 25px;
+}
+
+.jump-field{
+  max-width: 50%;
+}
+
+.margin47{
+  margin: 0;
+  padding: 2px;    
+  margin-left: 40%;
+  z-index: 5;
 }
