@@ -1,5 +1,6 @@
 # xkcd
 
+## [Click here](https://lalitsom.github.io/xkcd/) to try it.
 
 Infinite scrolling catalog of webcomics from xkcd.
 
