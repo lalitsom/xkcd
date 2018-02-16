@@ -73,11 +73,11 @@ function createNode(comic){
   return newComicNode;
 }
 
-function setcomic(){  
+function setcomic(){
   comicSetElem = document.getElementById('comicSet');
-  _comicnumber = parseInt(comicSetElem.innerHTML);
+  _comicnumber = parseInt(comicSetElem.value);
   if ( isNaN(_comicnumber) || _comicnumber<1 || _comicnumber>9999){
-    comicSetElem.innerHTML = currentComic;
+    comicSetElem.value = currentComic;
   }else{
     currentComic = _comicnumber;
   }
