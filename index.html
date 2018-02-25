@@ -11,6 +11,8 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/modalLightbox.css">
+  
 
   </head>
   <body class="grey lighten-5">
@@ -19,8 +21,7 @@
     <nav>
     <div class="nav-wrapper grey darken-4">
       <a href="https://github.com/lalitsom/xkcd" target="_blank" class="brand-logo left">XKCD</a>
-
-      <a class="waves-effect waves-light grey darken-4 btn margin47">Comic# <span id="comicSet" onblur="setcomic()" contenteditable>2</span></a>
+      <a class="waves-effect waves-light grey darken-4 btn margin47"><input type="number" min="0" max="3000"  id="comicSet" onblur="setcomic()" value="2"></input></a>
 
       <ul id="nav-mobile" class="right rightlogo">
         <li><a href="https://xkcd.com/1110/" target="_blank">Official XKCD</a></li>
@@ -36,10 +37,10 @@
            <br>
            <div class="center img-info">
              <p>
-               <a class="comicURL" href="https://xkcd.com/1309/" target="_blank">#1309. Infinite Scrolling</a>
+               <a class="comicURL" href="https://xkcd.com/1312/" target="_blank">#1312. Haskell</a>
              </p>
            </div>
-          <img class="responsive-img comic_image" src="https://imgs.xkcd.com/comics/infinite_scrolling.png" alt="comic image">
+          <img id="myImg" onclick="addModel(this)" class="responsive-img get_id comic_image" src="https://imgs.xkcd.com/comics/haskell.png" alt="comic image">
           <hr width="55%">
          </div>
 
@@ -56,11 +57,25 @@
       </div>
     </div>
     </div>
+	
+	<!-- The Modal -->
+<div id="myModal" class="modal1">
+
+  <!-- The Close Button -->
+  <span class="close">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
 
 
      <!-- scripts -->
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
      <script src="assets/js/main.js" charset="utf-8"></script>
+	 <script src="assets/js/modallightbox.js" charset="utf-8"></script>
        </body>
      </html>
