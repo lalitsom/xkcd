@@ -17,21 +17,11 @@ $(document).keydown(function(event) {
   }
 });
 
-
 // Get the image, opens the modal and add the image in it
 var modal = document.getElementById('myModal');
 
-
 function addModel(comicImgElem) {
-    launchLightbox();
     document.getElementById("modalImg").src = comicImgElem.src; // set image url in modal
     modal.style.display = "block";  // show modal
     document.getElementById('caption').innerHTML = comicImgElem.alt; // put comic title in caption
 }
-
-function launchLightbox() {
-        var cls = document.getElementsByClassName("comic_image");
-        for (n=0, length = cls.length; n < length; n++) {
-            cls[n].id= "oct_" + (n + 1);
-        }
-    };
