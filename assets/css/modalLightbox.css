@@ -19,7 +19,6 @@ cursor: zoom-in;}
     z-index: 1; /* Sit on top */
     padding-top: 50px; /* Location of the box */
     left: 0;
-
     top: 64px;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
@@ -32,9 +31,7 @@ cursor: zoom-in;}
 .modal-content {
     margin: auto;
     display: block;
-    width: auto;
-    max-height: 100%;
-	zoom: 135%;
+    max-width: 100%;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -46,7 +43,6 @@ cursor: zoom-in;}
     text-align: center;
     color: #ccc;
     padding: 10px 0;
-    height: 150px;
 }
 
 /* Add Animation - Zoom in the Modal */
@@ -77,17 +73,3 @@ cursor: zoom-in;}
     text-decoration: none;
     cursor: pointer;
 }
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-    .modal-content {
-        width: 100%;
-
-    }
-
-}
-@media query only screen and (max-width:601px){
-		.model1 {
-			top: 56px;
-		}
-	}
