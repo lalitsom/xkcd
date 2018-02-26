@@ -1,3 +1,5 @@
+
+
 var hostURL = "https://dynamic.xkcd.com/api-0/jsonp/comic/";
 var timeline = document.getElementById('timeline_id');
 var currentComic = 0
@@ -5,6 +7,8 @@ var activeCalls = 0;
 function init(){
   startScrollListener();
   fetchNextComic();
+  
+  
 }
 init();
 
@@ -20,6 +24,8 @@ function startScrollListener(){
       //load new content
       activeCalls += 1
       fetchNextComic();
+	  
+	  
   }
   })
 }
@@ -82,3 +88,15 @@ function setcomic(){
     currentComic = _comicnumber;
   }
 }
+
+
+
+
+
+
+
+
+
+
+	
+	
