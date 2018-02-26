@@ -13,13 +13,13 @@ cursor: zoom-in;}
 }
 
 /* The Modal (background) */
-.modal1 {
+.popupModal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 50px; /* Location of the box */
     left: 0;
-	
+
     top: 64px;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
@@ -35,8 +35,6 @@ cursor: zoom-in;}
     width: auto;
     max-height: 100%;
 	zoom: 135%;
-	
-	
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -52,13 +50,13 @@ cursor: zoom-in;}
 }
 
 /* Add Animation - Zoom in the Modal */
-.modal-content, #caption { 
+.modal-content, #caption {
     animation-name: zoom;
     animation-duration: 0.6s;
 }
 
 @keyframes zoom {
-    from {transform:scale(0)} 
+    from {transform:scale(0)}
     to {transform:scale(1)}
 }
 
@@ -84,9 +82,9 @@ cursor: zoom-in;}
 @media only screen and (max-width: 700px){
     .modal-content {
         width: 100%;
-		
+
     }
-	
+
 }
 @media query only screen and (max-width:601px){
 		.model1 {
