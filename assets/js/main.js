@@ -1,5 +1,3 @@
-
-
 var hostURL = "https://dynamic.xkcd.com/api-0/jsonp/comic/";
 var timeline = document.getElementById('timeline_id');
 var currentComic = 0
@@ -7,13 +5,10 @@ var activeCalls = 0;
 function init(){
   startScrollListener();
   fetchNextComic();
-  
-  
 }
 init();
 
 function startScrollListener(){
-
   //detects when user reaches the end
   window.addEventListener("scroll", function(){
   var contentHeight = timeline.offsetHeight;
@@ -24,15 +19,13 @@ function startScrollListener(){
       //load new content
       activeCalls += 1
       fetchNextComic();
-	  
-	  
   }
   })
 }
 
 function fetchNextComic(comicNumber = -1){
   if (comicNumber == -1){
-    comicNumber = currentComic + 1
+    comicNumber = currentComic + 1  // if no comic is specified fetch the next one
   }
   currentComic = comicNumber
   sendAJAXReq(hostURL + comicNumber);
@@ -76,6 +69,7 @@ function createNode(comic){
   newComicNode.find(".comicURL")[0].href = "https://xkcd.com/" + comic.num
   newComicNode.find(".comicURL")[0].innerHTML = "#" + comic.num + ". " + comic.title;
   newComicNode.find(".comic_image")[0].src = comic.img
+  newComicNode.find(".comic_image")[0].alt = comic.title
   return newComicNode;
 }
 
@@ -88,15 +82,3 @@ function setcomic(){
     currentComic = _comicnumber;
   }
 }
-
-
-
-
-
-
-
-
-
-
-	
-	
