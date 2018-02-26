@@ -1,37 +1,37 @@
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var closeModalSpan = document.getElementsByClassName("close")[0];
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
+function hideModal(){
   modal.style.display = "none";
 }
 
-// when user click esc, it closes the modal
+// When user clicks on <span> (x), hide the modal
+closeModalSpan.onclick = function() {
+  hideModal();
+}
 
-$(document).keydown(function(event) { 
-  if (event.keyCode == 27) { 
-    $('#myModal').hide();
+// when user press esc, hide the modal
+$(document).keydown(function(event) {
+  if (event.keyCode == 27) {
+    hideModal();
   }
 });
+
 
 // Get the image, opens the modal and add the image in it
 var modal = document.getElementById('myModal');
 
 
-function addModel(elem) {
-
- launchLightbox();
-  var testId;
-  testId = elem.src;
-
-var modalImg = document.getElementById("img01");
-    modal.style.display = "block";
-    modalImg.src = testId;	
+function addModel(comicImgElem) {
+    launchLightbox();
+    document.getElementById("modalImg").src = comicImgElem.src; // set image url in modal
+    modal.style.display = "block";  // show modal
+    document.getElementById('caption').innerHTML = comicImgElem.alt; // put comic title in caption
 }
+
 function launchLightbox() {
-        var cls = document.getElementsByClassName("comic_image"); 
+        var cls = document.getElementsByClassName("comic_image");
         for (n=0, length = cls.length; n < length; n++) {
-            cls[n].id= "oct_" + (n + 1); 
+            cls[n].id= "oct_" + (n + 1);
         }
-		
-    }; 
+    };
