@@ -12,7 +12,7 @@
 
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/modalLightbox.css">
-  
+
 
   </head>
   <body class="grey lighten-5">
@@ -40,7 +40,7 @@
                <a class="comicURL" href="https://xkcd.com/1312/" target="_blank">#1312. Haskell</a>
              </p>
            </div>
-          <img id="myImg" onclick="addModel(this)" class="zoomLog responsive-img get_id comic_image" src="https://imgs.xkcd.com/comics/haskell.png" alt="comic image">
+          <img id="myImg" onclick="addModel(this)" class="zoomLog responsive-img get_id comic_image" src="https://imgs.xkcd.com/comics/haskell.png" alt="Haskell">
           <hr width="55%">
          </div>
 
@@ -57,15 +57,16 @@
       </div>
     </div>
     </div>
-	
+
 	<!-- The Modal -->
-<div id="myModal" class="modal1">
+<div id="myModal" class="popupModal">
 
   <!-- The Close Button -->
   <span class="close">&times;</span>
 
   <!-- Modal Content (The Image) -->
-  <img class="modal-content" id="img01">
+  <!-- instead of finding the close span, hide the modal simply by clicking the image  -->
+  <img onclick="hideModal()" class="modal-content" id="modalImg">
 
   <!-- Modal Caption (Image Text) -->
   <div id="caption"></div>
