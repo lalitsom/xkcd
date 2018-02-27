@@ -17,9 +17,9 @@ cursor: zoom-in;}
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 50px; /* Location of the box */
+    padding-top: 40px; /* Location of the box */
     left: 0;
-    top: 64px;
+    top: 44px;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
@@ -32,6 +32,7 @@ cursor: zoom-in;}
     margin: auto;
     display: block;
     max-width: 100%;
+    padding-bottom: 5px; 
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
