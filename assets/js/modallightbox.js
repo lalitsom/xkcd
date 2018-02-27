@@ -1,8 +1,11 @@
 // Get the <span> element that closes the modal
 var closeModalSpan = document.getElementsByClassName("close")[0];
 
+
+
 function hideModal(){
   modal.style.display = "none";
+  $(document.documentElement).css('overflow','auto'); // continue scrolling of comics
 }
 
 // When user clicks on <span> (x), hide the modal
@@ -23,5 +26,6 @@ var modal = document.getElementById('myModal');
 function addModel(comicImgElem) {
     document.getElementById("modalImg").src = comicImgElem.src; // set image url in modal
     modal.style.display = "block";  // show modal
+    $(document.documentElement).css('overflow','hidden'); // stop scrolling in background
     document.getElementById('caption').innerHTML = comicImgElem.alt; // put comic title in caption
 }
