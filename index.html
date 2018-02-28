@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>xkcd</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <title>xkcd</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" media="screen" title="no title">
@@ -14,70 +15,74 @@
   <link rel="stylesheet" href="assets/css/modalLightbox.css">
 
 
-  </head>
-  <body class="grey lighten-5">
+</head>
 
-    <div class="navbar-fixed">
+<body class="grey lighten-5">
+
+  <div class="navbar-fixed">
     <nav>
-    <div class="nav-wrapper grey darken-4">
-      <a href="https://github.com/lalitsom/xkcd" target="_blank" class="brand-logo left">XKCD</a>
-      <a class="waves-effect waves-light grey darken-4 btn margin47"><input type="number" min="0" max="3000"  id="comicSet" onblur="setcomic()" value="2"></input></a>
+      <div class="nav-wrapper grey darken-4">
+        <a href="https://github.com/lalitsom/xkcd" target="_blank" class="brand-logo left">XKCD</a>
+        <a class="waves-effect waves-light grey darken-4 btn margin47"><input type="number" min="0" max="3000"  id="comicSet" onblur="setcomic()" value="2"></input></a>
 
-      <ul id="nav-mobile" class="right rightlogo">
-        <li><a href="https://xkcd.com/1110/" target="_blank">Official XKCD</a></li>
-      </ul>
-    </div>
+        <ul id="nav-mobile" class="right rightlogo">
+          <li><a href="https://xkcd.com/1110/" target="_blank">Official XKCD</a></li>
+        </ul>
+      </div>
     </nav>
     <br>
   </div>
 
 
-    <div id="timeline_id" class="center timeline">
+  <div id="timeline_id" class="center timeline">
 
-         <div id ="first_comic" class="comic_div center">
-           <br>
-           <div class="center img-info">
-             <p>
-               <a class="comicURL" href="https://xkcd.com/1309/" target="_blank">#1309. Infinite Scrolling</a>
-             </p>
-           </div>
-          <img id="comicImg" onclick="addModel(this)" class="zoomLog responsive-img get_id comic_image" src="https://imgs.xkcd.com/comics/infinite_scrolling.png" alt="Infinite Scrolling">
-          <hr width="55%">
-         </div>
+    <div id="first_comic" class="comic_div center">
+      <br>
+      <div class="center img-info">
+        <p>
+          <a class="comicURL" href="https://xkcd.com/1309/" target="_blank">#1309. Infinite Scrolling</a>
+        </p>
+      </div>
+      <img id="comicImg" onclick="addModel(this)" class="zoomLog responsive-img get_id comic_image" src="https://imgs.xkcd.com/comics/infinite_scrolling.png" alt="Infinite Scrolling">
+      <hr width="55%">
+    </div>
 
-     </div>
+  </div>
 
-     <div class=" load-center preloader-wrapper small active">
+  <div class=" load-center preloader-wrapper small active">
     <div class="spinner-layer spinner-green-only">
       <div class="circle-clipper left">
         <div class="circle"></div>
-      </div><div class="gap-patch">
+      </div>
+      <div class="gap-patch">
         <div class="circle"></div>
-      </div><div class="circle-clipper right">
+      </div>
+      <div class="circle-clipper right">
         <div class="circle"></div>
       </div>
     </div>
-    </div>
+  </div>
 
-	<!-- The Modal -->
-<div id="myModal" class="popupModal">
-  <!-- The Close Button -->
-  <span class="close">&times;</span>
+  <!-- The Modal -->
+  <div id="myModal" class="popupModal">
+    <!-- The Close Button -->
+    <span class="close">&times;</span>
 
-  <!-- Modal Caption (Image Text) -->
-  <div id="caption"></div>
+    <!-- Modal Caption (Image Text) -->
+    <div id="caption"></div>
 
-  <!-- Modal Content (The Image) -->
-  <!-- instead of finding the close span, hide the modal simply by clicking the image  -->
-  <img onclick="hideModal()" class="modal-content" id="modalImg">
+    <!-- Modal Content (The Image) -->
+    <!-- instead of finding the close span, hide the modal simply by clicking the image  -->
+    <img onclick="hideModal()" class="modal-content" id="modalImg">
 
-</div>
+  </div>
 
 
-     <!-- scripts -->
+  <!-- scripts -->
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-     <script src="assets/js/main.js" charset="utf-8"></script>
-	 <script src="assets/js/modallightbox.js" charset="utf-8"></script>
-       </body>
-     </html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="assets/js/main.js" charset="utf-8"></script>
+  <script src="assets/js/modallightbox.js" charset="utf-8"></script>
+</body>
+
+</html>

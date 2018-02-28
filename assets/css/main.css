@@ -1,27 +1,32 @@
-.comic_div{
-  width: auto;
+.comic_div
+{
+    width: auto;
 }
 
-.brand-logo{
-  margin-left: 10px;
+.brand-logo
+{
+    margin-left: 10px;
 }
-.comic_image{
-  display: inline;
+.comic_image
+{
+    display: inline;
 }
-.load-center{
-  margin-left: 50%;
+.load-center
+{
+    margin-left: 50%;
 }
-body{
-  font-size: 25px;
+body
+{
+    font-size: 25px;
 }
 
-.jump-field{
-  max-width: 50%;
+.jump-field
+{
+    max-width: 50%;
 }
 
-.margin47{
-  margin: 0;
-  padding: 2px;
-  margin-left: 40%;
-  z-index: 5;
+.margin47
+{
+    z-index: 5;
+    margin: 0;  margin-left: 40%;  padding: 2px;
 }
