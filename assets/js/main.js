@@ -28,10 +28,10 @@ function fetchNextComic(comicNumber = -1){
     comicNumber = currentComic + 1  // if no comic is specified fetch the next one
   }
   currentComic = comicNumber
-  sendAJAXReq(hostURL + comicNumber);
+  sendAJAXReq(hostURL + comicNumber,3);     // Max limit on Try again Request
 }
 
-function sendAJAXReq(json_url){
+function sendAJAXReq(json_url,maxTry){
   $.ajax({
     url: json_url,
     type: "GET",
@@ -47,7 +47,10 @@ function sendAJAXReq(json_url){
         activeCalls -= 1;
     },
     error: function(error){
-      setTimeout(sendAJAXReq,3000,json_url)
+      if (maxTry>0)
+      {   //Try again
+        setTimeout(sendAJAXReq,3000,json_url,maxTry-1)
+      }
     }
 });
 }
